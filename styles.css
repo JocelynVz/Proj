@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playwrite+DE+VA&display=swap'); /* FUENTE EXTRA*/
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #eeeeee;
+    /*fondo general */
+    color: #000000;
+    line-height: 1.7;
+    /* Aumenta el espaciado entre líneas para mejor legibilidad */
+}
+
+/* Barra de navegación */
+.barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 35px;
+    /* Reduce el padding vertical y ajusta el horizontal */
+    background: linear-gradient(to right, #5d7cb9, #6e8bc5);
+    /* Un azul más moderno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Añade una ligera sombra */
+}
+
+.enlace-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    /* Cambia el color del logo a blanco */
+    font-weight: 600;
+    /* Reduce un poco el grosor de la fuente */
+    font-size: 26px;
+    /* Aumenta ligeramente el tamaño */
+    gap: 10px;
+    /* Aumenta el espacio entre el icono y el texto */
+}
+
+.logo-navegacion {
+    display: block;
+    width: 40px;
+    /* Aumenta el tamaño del logo */
+    height: auto;
+}
+
+.menu-navegacion {
+    display: flex;
+    gap: 25px;
+    /* Aumenta el espacio entre los enlaces */
+}
+
+.enlace-navegacion,
+.boton-desplegable {
+    text-decoration: none;
+    color: white;
+    /* Cambia el color de los enlaces a blanco */
+    padding: 10px 18px;
+    /* Ajusta el padding para un mejor aspecto */
+    border-radius: 5px;
+    /* Añade un pequeño borde redondeado */
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 17px;
+    /* Ajusta el tamaño de la fuente */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    /* Añade una transición suave al hover */
+}
+
+.enlace-navegacion:hover,
+.boton-desplegable:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Un ligero fondo blanco al pasar el cursor */
+}
+
+/* Flecha */
+.flecha {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    /* Cambia el color de la flecha a blanco */
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg);
+    margin-left: 6px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.desplegable:hover .flecha {
+    transform: rotate(135deg);
+    border-left-color: #ddd;
+    border-bottom-color: #ddd;
+}
+
+.desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.contenido-desplegable {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Coloca el menú debajo del botón */
+    right: 0;
+    /* Alinea el menú a la derecha del botón */
+    background-color: white;
+    /* Cambia el fondo a blanco */
+    min-width: 220px;
+    /* Aumenta el ancho mínimo */
+    padding: 15px 0;
+    /* Ajusta el padding */
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    /* Añade un borde redondeado */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* Transiciones suaves */
+    transform-origin: top right;
+    /* Define el origen de la transformación */
+    opacity: 0;
+    pointer-events: none;
+    /* Evita que el menú sea interactivo hasta que se muestre */
+}
+
+.desplegable:hover .contenido-desplegable {
+    display: block;
+    transform: translateY(5px);
+    /* Desplaza el menú ligeramente hacia abajo al mostrarlo */
+    opacity: 1;
+    pointer-events: auto;
+    /* Permite la interacción con el menú */
+}
+
+.contenido-desplegable a {
+    color: #333;
+    padding: 12px 20px;
+    /* Aumenta el padding vertical y horizontal */
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transiciones suaves */
+}
+
+.contenido-desplegable a:hover {
+    color: #3498db;
+    /* Cambia el color al pasar el cursor */
+    background-color: #f0f0f0;
+    /* Cambia el fondo al pasar el cursor */
+}
+
+
+/* Muestra de trabajos */
+.seccion-muestra-trabajos {
+    padding: 50px 20px;
+    /* Aumenta el padding vertical */
+    background-color: #d4deee;
+    /* Un AZUL claro para la sección */
+}
+
+.contenedor-global-1200 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.envoltura-muestra-trabajos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Aumenta el espacio entre los elementos */
+    justify-content: center;
+}
+
+.lista-muestra-trabajos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    /* Aumenta el espacio entre los elementos */
+    width: 100%;
+    justify-content: center;
+}
+
+.elemento-muestra-trabajos {
+    flex: 1 1 300px;
+    /* Ajusta el tamaño base de los elementos */
+    max-width: 400px;
+    /* Aumenta el ancho máximo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    /* Aumenta la sombra */
+    border-radius: 10px;
+    /* Aumenta el borde redondeado */
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transiciones suaves */
+}
+
+.elemento-muestra-trabajos:hover {
+    transform: translateY(-10px);
+    /* Eleva el elemento al pasar el cursor */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    /* Aumenta la sombra al pasar el cursor */
+}
+
+/* Contenedor padre del video*/
+.elemento-muestra-trabajos {
+    max-width: 1200px;
+    /* Aumenta este valor para más ancho */
+    flex: 1 1 900px;
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    /* Aumenta la sombra */
+    border-radius: 10px;
+    /* Aumenta el borde redondeado */
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transiciones suaves */
+}
+
+/* Video con tamaño horizontal y ancho adaptable */
+.video-muestra-trabajos {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor padre */
+    height: auto;
+    /* Mantiene la proporción */
+    max-width: none;
+    /* Quita limitación de ancho */
+    border-radius: 10px;
+    /* Aumenta el borde redondeado */
+    display: block;
+    object-fit: cover;
+    /* Cubre el espacio manteniendo la proporción */
+}
+
+/* Estilos Base para Tarjetas */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+    gap: 25px;
+    max-width: 1200px;
+    margin: 30px auto;
+    /* Añade un margen superior e inferior */
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: stretch;
+    /* Permite que las tarjetas tengan la misma altura */
+}
+
+/* Tarjeta 1 */
+.tarjeta-tipo1 {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex: 1 1 400px;
+    /* Permite que la tarjeta crezca y se encoja */
+    min-width: 300px;
+    /* Establece un ancho mínimo */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-tipo1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #3498db, #6e8bc5);
+    /* Un gradiente sutil */
+}
+
+.contenido-tarjeta {
+    flex: 1;
+    /* Permite que el contenido se expanda y ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Alinea el contenido en la parte superior e inferior */
+}
+
+.titulo-tarjeta {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.contenedor-texto {
+    flex: 1;
+    /* Permite que el texto se expanda y ocupe el espacio restante */
+    overflow: auto;
+    /* Añade una barra de desplazamiento si el contenido es demasiado largo */
+}
+
+.texto-tarjeta {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.imagen-qr {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tarjeta 2 */
+.tarjeta-tipo2 {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex: 1 1 500px;
+    /* Permite que la tarjeta crezca y se encoja */
+    min-width: 300px;
+    /* Establece un ancho mínimo */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Estilos Carrusel */
+.splide__slide {
+    padding: 10px;
+}
+
+.subtarjeta {
+    display: block;
+    text-decoration: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subtarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-subtarjeta {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.contenido-subtarjeta {
+    padding: 15px;
+}
+
+.contenido-subtarjeta h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.contenido-subtarjeta p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Pie de página */
+footer {
+    background-color: #6e8bc5;
+    /* Un azul oscuro para el pie de página */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-seccion {
+    flex: 1;
+    text-align: left;
+}
