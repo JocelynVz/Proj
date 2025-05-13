@@ -4,17 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portafolio</title>
-    <!-- Nombre de pestaña -->
-    <link rel="icon" type="image/png" href="IMG/icon.png" />
-    <!-- icono de pestaña -->
-    <link rel="stylesheet" href="styles.css" />
-    <!-- llamada a css -->
+    <title>Portafolio</title> <!-- Nombre de pestaña -->
+    <link rel="icon" type="image/png" href="IMG/icon.png" /> <!-- icono de pestaña -->
+    <link rel="stylesheet" href="styles.css" /> <!-- llamada a css -->
+     <link rel="stylesheet" href="java.js" /> <!-- llamada a java -->
 </head>
 
 <body>
     <div class="barra-navegacion">
-        <!-- Menu -->
         <a href="Index.html" class="enlace-logo w-nav-brand" aria-label="home">
             <img src="IMG/icon.png" loading="lazy" alt="Logotipo Portafolio" class="logo-navegacion" width="35"
                 height="auto" />
@@ -40,6 +37,7 @@
         </nav>
     </div>
 
+    
     <!-- Capa superpuesta para menú móvil -->
     <div class="capa-superpuesta" id="capa-superpuesta" style="display:none;"></div>
 
@@ -74,27 +72,6 @@
         </main>
     </div>
 
-    <script>
-        // Ejemplo básico para mostrar/ocultar capa superpuesta (puedes adaptar para menú móvil)
-        const desplegable = document.querySelector('.desplegable');
-        const capaSuperpuesta = document.getElementById('capa-superpuesta');
-        const botonDesplegable = desplegable.querySelector('.boton-desplegable');
-
-        botonDesplegable.addEventListener('mouseenter', () => {
-            capaSuperpuesta.style.display = 'block';
-            botonDesplegable.setAttribute('aria-expanded', 'true');
-        });
-
-        desplegable.addEventListener('mouseleave', () => {
-            capaSuperpuesta.style.display = 'none';
-            botonDesplegable.setAttribute('aria-expanded', 'false');
-        });
-
-        capaSuperpuesta.addEventListener('click', () => {
-            capaSuperpuesta.style.display = 'none';
-            botonDesplegable.setAttribute('aria-expanded', 'false');
-        });
-    </script>
 
     <section class="seccion-muestra-trabajos">
         <div class="relleno-global">
@@ -185,223 +162,14 @@
         </div>
         </div>
     </section>
-    <!-- Splide JS -->
+
+
+        <!-- Splide JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            new Splide('.splide', {
-                type: 'loop',
-                perPage: 2,
-                gap: '1rem',
-                pagination: true,
-                arrows: true,
-                autoplay: true,
-                interval: 3000,
-                pauseOnHover: true,
-                breakpoints: {
-                    900: {
-                        perPage: 1,
-                        gap: '0.7rem'
-                    },
-                    600: {
-                        arrows: false,
-                        pagination: true
-                    }
-                }
-            }).mount();
-        });
-    </script>
 
-
-    <style> /* EDITORIAL-PERIODICO*/
-        
-    .contenedor-tarjetas-publicacion { /* Estilos del contenedor principal de las tarjetas */
-     display: grid;
-     place-items: center;
-     min-height: 100vh;
-     padding: 2rem;
-    }
-  
-    .tarjeta-publicacion { /* ESTILO DE TARJETA PERIODICO */
-     background: linear-gradient(145deg, #e6edff 0%, #ffffff 100%);
-     border-radius: 20px;
-     padding: 3rem;
-     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.085);
-     max-width: 1400px;
-     width: 95%;
-     position: relative;
-     overflow: hidden;
-    }
-  
-    .tarjeta-publicacion::before {
-     content: '';
-     position: absolute;
-     top: -50%;
-     left: -50%;
-     width: 200%;
-     height: 200%;
-     background: radial-gradient(circle, rgba(141, 5, 46, 0.1) 10%, transparent 40%);
-     animation: rotate 15s linear infinite;
-    }
-  
-    @keyframes rotate {
-     100% {
-      transform: rotate(360deg);
-     }
-    }
-  
-    /*contenido dentro de la tarjeta */
-    .contenido-tarjeta-publicacion {
-     display: grid;
-     gap: 3rem;
-     position: relative;
-    }
-  
-    /* Estilos de las imágenes secundarias */
-    .imagenes-secundarias-publicacion {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-     gap: 1.5rem;
-     margin: 2rem 0;
-    }
-  
-    .imagenes-secundarias-publicacion img {
-     width: 100%;
-     border-radius: 12px;
-     aspect-ratio: 4/3;
-     object-fit: cover;
-     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-  
-    .imagenes-secundarias-publicacion img:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 8px 24px rgba(141, 5, 46, 0.2);
-    }
-  
-    /* título principal */
-    .titulo-principal-publicacion {
-     color: #8d052e;
-     font-size: 2.8rem;
-     font-family: 'Playwrite DE VA', sans-serif;
-     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0);
-     margin-bottom: 1.5rem;
-     position: relative;
-     display: inline-block;
-    }
-  
-    .titulo-principal-publicacion::after {
-     content: '';
-     position: absolute;
-     left: 0;
-     bottom: 0;
-     width: 100%;
-     height: 2px;
-     background: linear-gradient(90deg, #a40d35 0%, transparent 100%);
-    }
-  
-    /* subtítulo */
-    .subtitulo-publicacion {
-     color: #232c8b;
-     font-size: 1.3rem;
-     font-weight: 500;
-     margin-bottom: 2rem;
-     line-height: 1.5;
-    }
-  
-    /* párrafo dentro de la tarjeta */
-    .tarjeta-publicacion p {
-     color: #444;
-     font-size: 1.1rem;
-     max-width: 800px;
-     margin: 1.5rem 0;
-     background: rgba(255, 255, 255, 0.9);
-     padding: 1.5rem;
-     border-radius: 8px;
-     backdrop-filter: blur(2px);
-    }
-  
-    /* Estilos del modal */
-    .modal-imagen {
-     display: none;
-     position: fixed;
-     z-index: 1000;
-     inset: 0;
-     background: rgba(0, 0, 0, 0.95);
-     padding: 2rem;
-     cursor: zoom-out;
-    }
-  
-    .modal-contenido-imagen {
-     position: relative;
-     max-width: 90vw;
-     max-height: 90vh;
-     margin: auto;
-     animation: zoom 0.3s ease;
-    }
-  
-    @keyframes zoom {
-     from {
-      transform: scale(0.9);
-     }
-  
-     to {
-      transform: scale(1);
-     }
-    }
-  
-    .modal-imagen img {
-     max-height: 80vh;
-     width: auto;
-     max-width: 100%;
-     border-radius: 8px;
-    }
-  
-    .modal-cerrar-imagen {
-     position: fixed;
-     top: 2rem;
-     right: 2rem;
-     font-size: 2.5rem;
-     color: white;
-     cursor: pointer;
-     background: rgba(0, 0, 0, 0.5);
-     padding: 0 1rem;
-     border-radius: 50%;
-     transition: all 0.3s ease;
-    }
-  
-    .modal-cerrar-imagen:hover {
-     background: rgba(141, 5, 46, 0.8);
-     transform: rotate(90deg);
-    }
-  
-    /* Media queries para diseño responsivo */
-    @media (max-width: 768px) {
-     body {
-      padding: 1rem;
-     }
-  
-     .tarjeta-publicacion {
-      padding: 1.5rem;
-     }
-  
-     .titulo-principal-publicacion {
-      font-size: 2rem;
-     }
-  
-     .subtitulo-publicacion {
-      font-size: 1.1rem;
-     }
-  
-     .imagenes-secundarias-publicacion {
-      grid-template-columns: 1fr;
-     }
-    }
-   </style>
-  
-   <div class="contenedor-tarjetas-publicacion" id="tarjeta-6">
+       <div class="contenedor-tarjetas-publicacion" id="tarjeta-6">
     <div class="tarjeta-publicacion">
      <h1 class="titulo-principal-publicacion">Diseño Editorial</h1>
      <h2 class="subtitulo-publicacion">Proyecto: Periódico conmemorativo al Aniversario de Nuevo Laredo,<br>Sección de
@@ -430,237 +198,8 @@
      <img src="" alt="Vista ampliada" id="modalImg">
     </div>
    </div>
-  
-   <script>
-    // Gestión de modal mejorada
-    const modal = document.getElementById('modalImagen');
-    const modalImg = document.getElementById('modalImg');
-  
-    document.querySelectorAll('.imagenes-secundarias-publicacion img').forEach(img => {
-     img.addEventListener('click', () => {
-      modal.style.display = 'block';
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      document.body.style.overflow = 'hidden';
-     });
-    });
-  
-    document.getElementById('cerrarModal').addEventListener('click', () => {
-     modal.style.display = 'none';
-     document.body.style.overflow = 'auto';
-    });
-  
-    modal.addEventListener('click', (e) => {
-     if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-     }
-    });
-  
-    document.addEventListener('keydown', (e) => {
-     if (e.key === 'Escape') {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-     }
-    });
-   </script>
-  
 
-  <style>/* IDENTIDAD*/
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playwrite+DE+VA&display=swap');
-   
-  
-    /* Contenedor principal para la exhibición de marcas */
-    .contenedor-marcas {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-     gap: 2.5rem;
-     max-width: 1400px;
-     margin: 0 auto;
-     padding: 2rem;
-    }
-  
-    /* Estilos base para cada ficha de marca */
-    .ficha-marca {
-     border-radius: 20px;
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-     overflow: hidden;
-     display: flex;
-     flex-direction: column;
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
-     cursor: default;
-    }
-  
-    .ficha-marca:hover {
-     transform: translateY(-8px);
-     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-    }
-  
-    /* Imagen representativa de la marca */
-    .imagen-marca {
-     width: 100%;
-     height: 200px;
-     object-fit: cover;
-     border-bottom: 6px solid transparent;
-     transition: border-color 0.3s ease;
-    }
-  
-    /* Contenido interno de la ficha */
-    .contenido-ficha {
-     padding: 1.8rem 2rem;
-     flex-grow: 1;
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-    }
-  
-    /* Nombre de la marca */
-    .nombre-marca {
-     font-family: 'Playwrite DE VA', serif;
-     font-size: 2.2rem;
-     margin-bottom: 0.5rem;
-    }
-  
-    /* Tagline o descripción corta */
-    .tagline-marca {
-     font-weight: 600;
-     font-size: 1.1rem;
-     margin-bottom: 1.3rem;
-     color: #555;
-    }
-  
-    /* Descripción extendida de la identidad */
-    .descripcion-marca {
-     font-size: 1rem;
-     color: #444;
-     background: rgba(255, 255, 255, 0.9);
-     padding: 1rem 1.2rem;
-     border-radius: 10px;
-     backdrop-filter: blur(4px);
-     box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
-     flex-grow: 1;
-    }
-  
-    /* Estilos temáticos por tipo de marca */
-    /* Mango - amarillo y naranja */
-    .marca-mango .imagen-marca {
-     border-color: #fbbf24;
-    }
-  
-    .marca-mango .nombre-marca {
-     color: #d97706;
-    }
-  
-    .marca-mango .tagline-marca {
-     color: #b45309;
-    }
-  
-    /* Coffee Tree - verdes */
-    .marca-coffeetree .imagen-marca {
-     border-color: #16a34a;
-    }
-  
-    .marca-coffeetree .nombre-marca {
-     color: #065f46;
-    }
-  
-    .marca-coffeetree .tagline-marca {
-     color: #047857;
-    }
-  
-    /* Voelur - azul marino y dorado */
-    .marca-voelur .imagen-marca {
-     border-color: #1e40af;
-    }
-  
-    .marca-voelur .nombre-marca {
-     color: #b45309;
-    }
-  
-    .marca-voelur .tagline-marca {
-     color: #4338ca;
-    }
-  
-    /* Modal para ver la imagen en detalle */
-    .modal-imagen {
-     display: none;
-     position: fixed;
-     z-index: 1000;
-     inset: 0;
-     background: rgba(0, 0, 0, 0.85);
-     padding: 2rem;
-     cursor: zoom-out;
-     align-items: center;
-     justify-content: center;
-    }
-  
-    .modal-imagen.active {
-     display: flex;
-    }
-  
-    .modal-contenido-imagen {
-     max-width: 90vw;
-     max-height: 90vh;
-     animation: zoomIn 0.3s ease forwards;
-    }
-  
-    @keyframes zoomIn {
-     from {
-      transform: scale(0.9);
-      opacity: 0;
-     }
-  
-     to {
-      transform: scale(1);
-      opacity: 1;
-     }
-    }
-  
-    .modal-imagen img {
-     max-height: 80vh;
-     max-width: 100%;
-     border-radius: 12px;
-    }
-  
-    .modal-cerrar-imagen {
-     position: fixed;
-     top: 2rem;
-     right: 2rem;
-     font-size: 2.8rem;
-     color: white;
-     cursor: pointer;
-     background: rgba(0, 0, 0, 0.5);
-     padding: 0 1rem;
-     border-radius: 50%;
-     transition: background 0.3s ease, transform 0.3s ease;
-     user-select: none;
-    }
-  
-    .modal-cerrar-imagen:hover {
-     background: rgba(34, 197, 94, 0.9);
-     transform: rotate(90deg);
-    }
-  
-    /* Ajustes para pantallas más pequeñas */
-    @media (max-width: 768px) {
-     body {
-      padding: 1rem;
-     }
-  
-     .nombre-marca {
-      font-size: 1.8rem;
-     }
-  
-     .tagline-marca {
-      font-size: 1rem;
-     }
-  
-     .imagen-marca {
-      height: 180px;
-     }
-    }
-   </style>
-  
+
    <div class="contenedor-marcas" id="articulo-3">
     <article class="ficha-marca marca-mango" tabindex="0" aria-label="Identidad visual Mango, libro de cocina">
      <img src="IMG/IMGO.png" alt="Diseño identidad visual Mango" loading="lazy" class="imagen-marca" />
@@ -703,43 +242,9 @@
      <img src="" alt="Vista ampliada" id="modalImg" />
     </div>
    </div>
-  
-   <script>
-    
-  
-    document.querySelectorAll('.imagen-marca').forEach(img => {
-     img.style.cursor = 'zoom-in';
-     img.addEventListener('click', () => {
-      modal.classList.add('active');
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      document.body.style.overflow = 'hidden';
-     });
-    });
-  
-    cerrarModalBtn.addEventListener('click', () => {
-     modal.classList.remove('active');
-     document.body.style.overflow = 'auto';
-    });
-  
-    modal.addEventListener('click', (e) => {
-     if (e.target === modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-     }
-    });
-  
-    document.addEventListener('keydown', (e) => {
-     if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-     }
-    });
-   </script>
 
-
-  
-    <!-- Pie de página -->
+   
+   <!-- Pie de página -->
     <footer>
         <div class="footer-contenido">
             <div class="footer-seccion">
